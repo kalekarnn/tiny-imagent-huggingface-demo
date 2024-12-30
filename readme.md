@@ -2,7 +2,7 @@
 
 This project demonstrates training a ResNet-50 model from scratch on the Tiny ImageNet dataset. It includes model creation, training, evaluation, saving, and deploying a demo using Gradio.
 
----
+### [Demo Link](https://huggingface.co/spaces/kalekarnn/resnet50-tinyimagenet-demo)
 
 ## Features
 - **Data Loading**: Loads and preprocesses the Tiny ImageNet dataset using Hugging Face's `datasets` library.
@@ -16,7 +16,7 @@ This project demonstrates training a ResNet-50 model from scratch on the Tiny Im
 
 ## Prerequisites
 Ensure you have the following installed:
-- Python 3.8+
+- Python 3.11
 - pip
 
 Install required libraries using:
@@ -32,7 +32,7 @@ project/
 ├── train.py          # Script for training the model
 ├── model.py          # Script for defining the model
 ├── data.py           # Script for loading the dataset
-├── app.py    # Script for running Gradio demo
+├── app.py            # Script for running Gradio demo
 ├── utils.py          # Utility functions
 ├── config.py         # Configuration file
 ├── requirements.txt  # List of dependencies
@@ -49,7 +49,6 @@ NUM_EPOCHS = 5
 LEARNING_RATE = 0.001
 DEVICE = "mps" if torch.backends.mps.is_available() else "cuda" if torch.cuda.is_available() else "cpu"
 MODEL_SAVE_PATH = "resnet50_tinyimagenet.pt"
-HF_MODEL_REPO = "resnet50-tinyimagenet"
 ```
 
 ---
@@ -65,22 +64,7 @@ python train.py
 ### 2. **Save the Model**
 The trained model will be saved to the path specified in `config.py` (default: `resnet50_tinyimagenet.pt`).
 
-### 3. **Upload to Hugging Face**
-(Optional) Upload the model to the Hugging Face Model Hub:
-```python
-from huggingface_hub import HfApi
-
-api = HfApi()
-api.upload_file(
-    path_or_fileobj="resnet50_tinyimagenet.pt",
-    path_in_repo="resnet50_tinyimagenet.pt",
-    repo_id=f"<YOUR_USERNAME>/resnet50-tinyimagenet",
-    repo_type="model",
-    commit_message="Upload trained ResNet-50"
-)
-```
-
-### 4. **Run Gradio Demo**
+### 3. **Run Gradio Demo**
 Launch the Gradio interface for real-time image classification:
 ```bash
 python app.py
@@ -111,12 +95,12 @@ Launch the demo using `app.py`.
 ## Requirements
 See `requirements.txt` for all dependencies:
 ```plaintext
-torch>=2.0.0
-torchvision>=0.15.0
-datasets>=2.13.0
-huggingface-hub>=0.16.4
-gradio>=3.30.0
-matplotlib>=3.8.0
+torch
+torchvision
+datasets
+huggingface-hub
+gradio
+matplotlib
 ```
 
 Install them using:
