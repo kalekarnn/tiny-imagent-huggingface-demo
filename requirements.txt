@@ -1,0 +1,6 @@
+torch
+torchvision
+datasets
+huggingface-hub
+gradio
+matplotlib
