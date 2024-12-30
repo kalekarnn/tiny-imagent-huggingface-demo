@@ -32,7 +32,7 @@ project/
 ├── train.py          # Script for training the model
 ├── model.py          # Script for defining the model
 ├── data.py           # Script for loading the dataset
-├── gradio_demo.py    # Script for running Gradio demo
+├── app.py    # Script for running Gradio demo
 ├── utils.py          # Utility functions
 ├── config.py         # Configuration file
 ├── requirements.txt  # List of dependencies
@@ -83,7 +83,7 @@ api.upload_file(
 ### 4. **Run Gradio Demo**
 Launch the Gradio interface for real-time image classification:
 ```bash
-python gradio_demo.py
+python app.py
 ```
 Access the demo at the URL provided in the terminal.
 
@@ -104,7 +104,7 @@ The Gradio demo allows you to:
 1. Upload an image.
 2. Get the predicted class.
 
-Launch the demo using `gradio_demo.py`.
+Launch the demo using `app.py`.
 
 ---
 
